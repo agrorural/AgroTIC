@@ -1,0 +1,33 @@
+<spacer size="16"></spacer>
+<container>
+    <wrapper class="super-header" bgcolor="#8a8a8a">
+        <row class="collapse">
+            <columns small="12" valign="middle">
+                <p class="text-center">¿NO SE MUESTRA CORRECTAMENTE? <a href="http://mailing.agrorural.gob.pe/{{email.year}}/{{email.month.int}}/{{email.day}}-{{email.name}}-{{email.number}}.html">VER EN EL NAVEGADOR</a></p>
+            </columns>
+        </row>
+    </wrapper>    
+</container>
+
+<container>
+    <wrapper class="header with-bg-img--dark" bgcolor="#323232" background="http://mailing.agrorural.gob.pe/assets/img/agro_tic__bg.png">
+        <row>
+            <columns small="12" valign="middle">
+                <p class="text-right"><small>{{email.month.str}}, {{email.year}} | Nº {{email.number}}</small></p>
+            </columns>
+        </row>
+        <spacer size="16"></spacer>
+        <row>
+            <columns small="12" valign="middle">
+                <center>
+                    <img src="http://mailing.agrorural.gob.pe/assets/img/agro_tic__logo--without-text.png" style="width:350px">
+                </center>
+            </columns>
+        </row>
+        <row>
+            <columns small="12" valign="middle">
+                <p class="text-right"><small>{{subject}}</small></p>
+            </columns>
+        </row>
+    </wrapper>
+</container>

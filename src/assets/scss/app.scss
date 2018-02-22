@@ -2,13 +2,19 @@
 @import 'foundation-emails';
 @import 'template/template';
 .wrapper{
+    &.with-bg-img--dark{
+        background-image: url(http://mailing.agrorural.gob.pe/assets/img/agro_tic__bg--dark.png);
+    }
+    &.with-bg-img--light{
+        background-image: url(http://mailing.agrorural.gob.pe/assets/img/agro_tic__bg--light.png);
+    }
     &.super-header{
-        background: #555555;
+        background: #000000;
         .columns{
             padding-bottom: 0;
         }
         p{
-            font-size: 10px;
+            font-size: 9px;
             color: #eee;
             margin-bottom: 0;
             a{
@@ -28,24 +34,114 @@
             background: #f3f3f3;
         }
     }
-    
     &.header{
         background-color: #323232;
-        background-image: url(http://mailing.agrorural.gob.pe/assets/img/agro_tic__bg.png);
         .wrapper-inner {
-            padding: 32px 0 0; /*controls the height of the header*/
+            padding: 24px 0 24px; /*controls the height of the header*/
             .text-center{
                 font-size: 10px;
                 color: $primary-color;
             }
         }
     }
-    &.footer{
-        .columns{
-            padding-bottom: 0;
-        }
+    &.tips{
+        background-color: $primary-color;
         .wrapper-inner {
-            padding: 32px;
+            padding: 32px 0 32px;
+            table.button table td{
+                background: $blue;
+            }
+        }
+    }
+    &.footer{
+        .wrapper-inner {
+            .container{
+                background: transparent;
+            }
+            padding: 0;
+            .social{
+                background: #fafafa;
+                .columns.last{
+                    padding-bottom: 0;
+                }
+            }
+            .info{     
+                background: $blue;         
+                .columns{
+                    padding-top: 32px;
+                    padding-bottom: 16px;
+                    p{
+                        padding-top: 16px;
+                    }
+                    table.menu.vertical td.menu-item, table.menu.vertical th.menu-item{
+                        text-align: right;
+                        padding: 4px;
+                    }
+                }
+            }
+            .copy{
+
+                    small{
+                        color: $dark-gray;
+                    }
+
+            }
+        }
+    }
+}
+table.button{
+    table td a{
+        font-family: $header-font-family;
+        font-size: 100%;
+        text-transform: uppercase;
+    }
+}
+.post{
+    .tag{
+        font-size: 80%;
+        color: $medium-gray;
+        text-transform: uppercase;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+    .title{
+        font-size: 20px;
+        a{
+            color: $black;
+            &:hover{
+            color: $primary-color;
+            }
+        }
+    }
+    .read-more{
+        text-transform: uppercase;
+        font-size: 85%;
+    }
+    &.featured{
+        .title{
+            font-size: 30px;
+        }
+    }
+    .tips &{
+        .tag{
+            color: $blue;
+        }
+        .title{
+            font-size: 30px;
+            a{
+                color: $blue;
+                &:hover{
+                    color: $white;
+                    opacity: .85;
+                }
+            }
+        }
+        .subtitle{
+            font-size: 18px;
+            color: $white;
+        }
+        p>small{
+            color: $dark-gray;
         }
     }
 }
