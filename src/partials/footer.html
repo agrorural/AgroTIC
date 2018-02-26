@@ -1,28 +1,33 @@
-<wrapper class="footer with-bg-img--light">
+<wrapper class="footer with-bg-img--blue">
     <container>
         <row class="collapsed social">
             <columns small="12" valign="middle">
                 <center>
                     <menu>
-                        <item><img src="http://placehold.it/25/663399" alt=""></item>
-                        <item><img src="http://placehold.it/25/663399" alt=""></item>
-                        <item><img src="http://placehold.it/25/663399" alt=""></item>
-                        <item><img src="http://placehold.it/25/663399" alt=""></item>
-                        <item><img src="http://placehold.it/25/663399" alt=""></item>
+                        {{#each email.global.social}}
+                            <item href="{{permalink}}"><img src="{{icon}}" alt="{{title}}"></item>
+                        {{/each}}
                     </menu>
                 </center>
             </columns>
         </row>
-        <row class="info">
-            <columns small="6" valign="middle">
-                <img class="small-float-center" src="http://mailing.agrorural.gob.pe/assets/img/agro_rural__logo--white.png">
-                <p class="small-text-center"><small>Av. Salaverry 1388, <br>Jesús María, PE 15072<br>+511 205 8030</small></p>
+        <row class="brand">
+            <columns small="12" valign="middle">
+                <img class="small-float-center" src="http://mailing.agrorural.gob.pe/assets/img/agro_rural__logo.png">
             </columns>
-            <columns small="6" valign="middle">
-                <menu class="vertical">
-                    <item href="http://zurb.com">Portal Web</item>
-                    <item href="http://zurb.com">Intranet</item>
-                    <item href="http://zurb.com">Aula Virtual</item>
+        </row>
+        <row class="info">
+            <columns small="12" large="6" valign="top">
+                <menu class="vertical site">
+                        <item class="text-left" href="https://www.google.com.pe/maps/place/AGRO+RURAL/@-12.0785788,-77.0158159,14z/data=!4m8!1m2!2m1!1sagro+rural!3m4!1s0x9105c8f0da85c62f:0x6f311078be8946fa!8m2!3d-12.0796521!4d-77.0425728?hl=es-419">Av. Salaverry 1388, <br>Jesús María, PE 15072</item>
+                        <item class="text-left" href="tel:+5112058030">+511 205 8030</item>
+                    </menu>
+            </columns>
+            <columns small="12" large="6" valign="top">
+                <menu class="vertical apps">
+                    <item class="text-right" href="http://www.agrorural.gob.pe">Portal Web</item>
+                    <item class="text-right" href="http://intranet.agrorural.gob.pe/agronet">Intranet</item>
+                    <item class="text-right" href="http://yachay.agrorural.gob.pe">Aula Virtual</item>
                 </menu>
             </columns>
         </row>

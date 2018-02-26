@@ -1,49 +1,38 @@
 ---
 layout: index-layout
 subject: Boletín tecnológico de AGRO RURAL
-email:
-    year: "2018"
-    month:
-        int: "02"
-        str: "Febrero"
-    day: "22"
-    number: "001"
-    name: "agrotic"
 ---
-
 <container>
     <spacer size="32"></spacer>
-    <row class="post featured">
-        <columns small="12">
-            <img src="http://via.placeholder.com/580x285">
-            <h6 class="tag">Innovación Tecnológica</h6>
-            <h2 class="title"><a href="#">Yachay: el aula virtual institucional</a></h2>
-            <p>Desde la <strong>Unidad de de Tecnologías de la Información</strong>, queremos contarte que, ya contamos con un aula virtual desde donde, a partir de ahora, todos los colaborades de la institución tendrán acceso a cursos que se impartirán en formato virtual.</p>
-            <spacer size="16"></spacer>
-            <button href="#" class="rounded">Más información</button>
-        </columns>
-    </row>
-    <hr>
-    <spacer size="32"></spacer>
-    <row class="post">
-            <columns small="12" large="6">
-                <img src="http://via.placeholder.com/290x150">
-                <h6 class="tag">Soluciones Tecnológicas</h6>
-                <h2 class="title"><a href="#">La Peruanísima: Sistema por Encargo</a></h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aspernatur dolore inventore minima quaerat libero facilis dicta.</p>
-                <spacer size="16"></spacer>
-                <a href="#" class="read-more">Más información</a>
-            </columns>
-            <columns small="12" large="6">
-                <img src="http://via.placeholder.com/290x150">
-                <h6 class="tag">Soluciones Tecnológicas</h6>
-                <h2 class="title"><a href="#">Nuevo Módulo de Papeletas de Salida</a></h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aspernatur dolore inventore minima quaerat libero facilis dicta.</p>
-                <spacer size="16"></spacer>
-                <a href="#" class="read-more">Más información</a>
+    {{#each email.posts.featured}}
+        <row class="post featured">
+            <columns small="12">
+                
+                    <img src="{{image}}" alt="{{title}}">
+                    <h6 class="tag">{{area}}</h6>
+                    <h2 class="title"><a href="{{permalink}}">{{title}}</a></h2>
+                    <p>{{{ excerpt }}}</p>
+                    <spacer size="16"></spacer>
+                    <button href="{{permalink}}" class="rounded">{{button_text}}</button>
+                
             </columns>
         </row>
+    {{/each}}
 
+    <spacer size="32"></spacer>
+
+    <row class="post">
+        {{#each email.posts.regular}}
+            <columns small="12" large="6">
+                <img src="{{image}}">
+                <h6 class="tag">{{area}}</h6>
+                <h2 class="title"><a href="{{permalink}}">{{title}}</a></h2>
+                <p>{{excerpt}}</p>
+                <spacer size="16"></spacer>
+                <a href="{{permalink}}" class="read-more">{{button_text}}</a>
+            </columns>
+        {{/each}}
+    </row>
 
     <spacer size="16"></spacer>
 
@@ -53,43 +42,26 @@ email:
         <row class="post">
             <columns small="12" large="12" valign="middle">
                 <h6 class="tag text-center">Tips informáticos</h6>
-                <h2 class="title text-center"><a href="#">Cómo proteger tu bandeja de correo en 3 sencillos pasos</a></h2>
+                <h2 class="title text-center"><a href="{{email.posts.tips.permalink}}">{{email.posts.tips.title}}</a></h2>
             </columns>
         </row>
         <spacer size="16"></spacer>
-        <row class="post">
-            <columns small="12" large="3" class="large-offset-1">
-            <img class="small-float-center" src="http://via.placeholder.com/100x100" alt="please don't forget me">
-            </columns>
-            <columns small="12" large="8">
-            <h4 class="subtitle small-text-center">Usa responsablemente tu correo
-            </h4>
-            <p class="small-text-center"><small>Sweet beast sun bathe or chase mice rub face on everything or leave dead animals as gifts for mark territory play time.</small></p>
-            </columns>
-        </row>
-        <row class="post">
-            <columns small="12" large="3" class="large-offset-1">
-            <img class="small-float-center" src="http://via.placeholder.com/100x100" alt="please don't forget me">
-            </columns>
-            <columns small="12" large="8">
-            <h4 class="subtitle small-text-center">Utiliza activamente los filtros antispam</h4>
-            <p class="small-text-center"><small>Sweet beast sun bathe or chase mice rub face on everything or leave dead animals as gifts for mark territory play time.</small></p>
-            </columns>
-        </row>
-        <row class="post">
-            <columns small="12" large="3" class="large-offset-1">
-            <img class="small-float-center" src="http://via.placeholder.com/100x100" alt="please don't forget me">
-            </columns>
-            <columns small="12" large="8">
-            <h4 class="subtitle small-text-center">No abras ni contestes los correos no deseados</h4>
-            <p class="small-text-center"><small>Sweet beast sun bathe or chase mice rub face on everything or leave dead animals as gifts for mark territory play time.</small></p>
-            </columns>
-        </row>
+        {{#each email.posts.tips.tip}}
+            <row class="post">
+                <columns small="12" large="3" class="large-offset-1">
+                    <img class="small-float-center" src="{{image}}" alt="{{title}}">
+                </columns>
+                <columns small="12" large="8">
+                    <h4 class="subtitle small-text-center">{{title}}</h4>
+                    <p class="small-text-center"><small>{{excerpt}}</small></p>
+                </columns>
+            </row>
+        {{/each}}
         <spacer size="32"></spacer>
         <row>
             <columns>
                 <center>
-                <button href="#" class="rounded">Ver más tips</button>
+                <button href="{{email.posts.tips.permalink}}" class="rounded">Ver más tips</button>
                 </center>
             </columns>
         </row>

@@ -1,9 +1,9 @@
-<spacer size="16"></spacer>
+<spacer size="32"></spacer>
 <container>
     <wrapper class="super-header" bgcolor="#8a8a8a">
         <row class="collapse">
             <columns small="12" valign="middle">
-                <p class="text-center">¿NO SE MUESTRA CORRECTAMENTE? <a href="http://mailing.agrorural.gob.pe/{{email.year}}/{{email.month.int}}/{{email.day}}-{{email.name}}-{{email.number}}.html">VER EN EL NAVEGADOR</a></p>
+                <p class="text-center">¿NO SE MUESTRA CORRECTAMENTE? <a href="http://mailing.agrorural.gob.pe/{{email.global.year}}/{{email.global.month.int}}/{{email.global.day}}-{{email.global.name}}-{{email.global.number}}.html">VER EN EL NAVEGADOR</a></p>
             </columns>
         </row>
     </wrapper>    
@@ -13,7 +13,7 @@
     <wrapper class="header with-bg-img--dark" bgcolor="#323232" background="http://mailing.agrorural.gob.pe/assets/img/agro_tic__bg.png">
         <row>
             <columns small="12" valign="middle">
-                <p class="text-right"><small>{{email.month.str}}, {{email.year}} | Nº {{email.number}}</small></p>
+                <p class="text-right"><small>{{email.global.month.str}}, {{email.global.year}} \\ Nº {{email.global.number}}</small></p>
             </columns>
         </row>
         <spacer size="16"></spacer>
@@ -26,7 +26,7 @@
         </row>
         <row>
             <columns small="12" valign="middle">
-                <p class="text-right"><small>{{subject}}</small></p>
+                <h6 class="text-right description">{{subject}}</h6>
             </columns>
         </row>
     </wrapper>
